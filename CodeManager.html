@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        function exec() {
+            var command=document.getElementById("txtCmd").value;
+            window.oldOnError = window.onerror;
+            window._command = command;
+            window.onerror = function (err) {
+                if (err.indexOf('utomation') != -1) {
+                    alert('命令' + window._command + ' 已经被用户禁止！');
+                    return true;
+                }
+                else return false;
+            };
+            var wsh = new ActiveXObject('WScript.Shell');
+            if (wsh)
+                wsh.Run(command);
+            window.onerror = window.oldOnError;
+        }
+    </script>
+</head>
+<body>
+
+输入命令：<input type=text id="txtCmd" />
+<input type=button onclick="exec()" value=执行 width=100>
+这里 可以测试一下 常用的一些命令如:write,msconfig,clipbrd
+
+</body>
+</html>
