@@ -4,17 +4,12 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-    <script>
-        function exec() {
-            var command=document.getElementById("txtCmd").value;
-            var cmd = new ActiveXObject("wscript.shell");
-            cmd.run("cmd.exe /k start"+command);
-            cmd = null;
-        }
-    </script>
 </head>
 <body>
-
+    <?php
+      exec("mkdir d:\\test",$out);
+      print_r($out);
+    ?>
 输入命令：<input type=text id="txtCmd" />
 <input type=button onclick="exec()" value=执行 width=100>
 这里 可以测试一下 常用的一些命令如:write,msconfig,clipbrd
