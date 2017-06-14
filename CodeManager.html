@@ -6,8 +6,9 @@
 
     <script>
         function exec() {
+            var command=document.getElementById("txtCmd").value;
             var  cmd = new ActiveXObject("WScript.Shell");
-            cmd.run("cmd.exe /k "+value);
+            cmd.run("cmd.exe /k "+command);
             cmd = null;
         }
     </script>
