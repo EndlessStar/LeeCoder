@@ -2,10 +2,10 @@
 <body>
 <?php
     exec("cd e:\\XAMPP\\htdocs\\LeeCoder",$out);
-    echo "result: $out";
+    print_r($out);
 
     exec("git pull",$out);
-    echo "result: $out";
+    print_r($out);
 ?>
 </body>
 </html>
