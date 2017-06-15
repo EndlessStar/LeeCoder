@@ -6,5 +6,6 @@
 
     exec("git pull",$out);
     echo $out;
+?>
 </body>
 </html>
